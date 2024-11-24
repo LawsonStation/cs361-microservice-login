@@ -83,31 +83,6 @@ app.post('/login', (req, res) => {
   });
 });
 
-// Protected Route (Requires JWT)
-// app.get('/profile', (req, res) => {
-//   const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
-
-//   if (!token) {
-//     return res.status(403).json({ message: 'No token provided' });
-//   }
-
-//   // Verify the JWT token
-//   jwt.verify(token, JWT_SECRET, (err, decoded) => {
-//     if (err) {
-//       return res.status(403).json({ message: 'Invalid or expired token' });
-//     }
-
-//     // Fetch user profile from database
-//     db.get('SELECT id, username FROM users WHERE id = ?', [decoded.userId], (err, user) => {
-//       if (err) {
-//         return res.status(500).json({ message: 'Error fetching user profile' });
-//       }
-
-//       res.json({ message: 'User profile', user });
-//     });
-//   });
-// });
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
